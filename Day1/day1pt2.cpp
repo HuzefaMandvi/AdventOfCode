@@ -10,13 +10,12 @@ int main(){
 
 	cin >> captcha;
 
-	if(captcha[0] == captcha.length() / 2){
-		
-	}
+	int offset = (captcha.length() / 2);
 
-	for(int i = 1; i <= captcha.length() / 2; i++){
-		if(captcha[i] == captcha[i*2])
+	for(int i = 0; i < captcha.length(); i++){
+		if(captcha[i] == captcha[(i+offset) % captcha.length()]){
 			total += captcha[i] - 48;
+		}
 	}
 
 	cout << total << endl;
